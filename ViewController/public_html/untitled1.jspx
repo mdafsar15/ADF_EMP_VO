@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="center">
+            <!-- id="af_one_column_stretched"   -->
+            <af:decorativeBox theme="dark" id="db2">
+              <f:facet name="center">
+                <af:decorativeBox theme="medium" id="db1">
+                  <f:facet name="center">
+                    <af:panelSplitter id="ps1" splitterPosition="405">
+                      <f:facet name="first">
+                        <af:panelAccordion id="pa1">
+                          <af:showDetailItem text="Dept" id="sdi2">
+                            <af:panelFormLayout id="pfl1">
+                              <af:panelLabelAndMessage label="#{bindings.Deptno.hints.label}"
+                                                       id="plam1">
+                                <af:outputText value="#{bindings.Deptno.inputValue}"
+                                               id="ot3">
+                                  <af:convertNumber groupingUsed="false"
+                                                    pattern="#{bindings.Deptno.format}"/>
+                                </af:outputText>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="#{bindings.Dname.hints.label}"
+                                                       id="plam3">
+                                <af:outputText value="#{bindings.Dname.inputValue}"
+                                               id="ot2"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="#{bindings.Loc.hints.label}"
+                                                       id="plam2">
+                                <af:outputText value="#{bindings.Loc.inputValue}"
+                                               id="ot1"/>
+                              </af:panelLabelAndMessage>
+                              <f:facet name="footer">
+                                <af:panelGroupLayout layout="horizontal"
+                                                     id="pgl1">
+                                  <af:commandButton actionListener="#{bindings.First.execute}"
+                                                    text="First"
+                                                    disabled="#{!bindings.First.enabled}"
+                                                    partialSubmit="true"
+                                                    id="cb1"/>
+                                  <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                                    text="Previous"
+                                                    disabled="#{!bindings.Previous.enabled}"
+                                                    partialSubmit="true"
+                                                    id="cb2"/>
+                                  <af:commandButton actionListener="#{bindings.Next.execute}"
+                                                    text="Next"
+                                                    disabled="#{!bindings.Next.enabled}"
+                                                    partialSubmit="true"
+                                                    id="cb3"/>
+                                  <af:commandButton actionListener="#{bindings.Last.execute}"
+                                                    text="Last"
+                                                    disabled="#{!bindings.Last.enabled}"
+                                                    partialSubmit="true"
+                                                    id="cb4"/>
+                                </af:panelGroupLayout>
+                              </f:facet>
+                            </af:panelFormLayout>
+                          </af:showDetailItem>
+                          <af:showDetailItem text="More Info" id="sdi3"/>
+                        </af:panelAccordion>
+                      </f:facet>
+                      <f:facet name="second">
+                        <af:panelSplitter id="ps2" orientation="vertical"
+                                          splitterPosition="230">
+                          <f:facet name="first">
+                            <af:panelCollection id="pc1">
+                              <f:facet name="menus"/>
+                              <f:facet name="toolbar"/>
+                              <f:facet name="statusbar"/>
+                              <af:table value="#{bindings.EmpView1.collectionModel}"
+                                        var="row"
+                                        rows="#{bindings.EmpView1.rangeSize}"
+                                        emptyText="#{bindings.EmpView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                        fetchSize="#{bindings.EmpView1.rangeSize}"
+                                        rowBandingInterval="0" id="t1">
+                                <af:column sortProperty="#{bindings.EmpView1.hints.Ename.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.EmpView1.hints.Ename.label}"
+                                           id="c4">
+                                  <af:outputText value="#{row.Ename}" id="ot4"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpView1.hints.Job.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.EmpView1.hints.Job.label}"
+                                           id="c6">
+                                  <af:outputText value="#{row.Job}" id="ot8"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpView1.hints.Mgr.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.EmpView1.hints.Mgr.label}"
+                                           id="c5">
+                                  <af:outputText value="#{row.Mgr}" id="ot6">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmpView1.hints.Mgr.format}"/>
+                                  </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpView1.hints.Hiredate.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.EmpView1.hints.Hiredate.label}"
+                                           id="c7">
+                                  <af:outputText value="#{row.Hiredate}"
+                                                 id="ot9">
+                                    <af:convertDateTime pattern="#{bindings.EmpView1.hints.Hiredate.format}"/>
+                                  </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpView1.hints.Sal.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.EmpView1.hints.Sal.label}"
+                                           id="c1">
+                                  <af:outputText value="#{row.Sal}" id="ot5">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmpView1.hints.Sal.format}"/>
+                                  </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpView1.hints.Comm.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.EmpView1.hints.Comm.label}"
+                                           id="c2">
+                                  <af:outputText value="#{row.Comm}" id="ot10">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmpView1.hints.Comm.format}"/>
+                                  </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmpView1.hints.Deptno.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.EmpView1.hints.Deptno.label}"
+                                           id="c3">
+                                  <af:outputText value="#{row.Deptno}" id="ot7">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmpView1.hints.Deptno.format}"/>
+                                  </af:outputText>
+                                </af:column>
+                              </af:table>
+                            </af:panelCollection>
+                          </f:facet>
+                          <f:facet name="second">
+                            <af:panelTabbed id="pt1">
+                              <af:showDetailItem text="Emp"
+                                                 id="sdi1">
+                                <af:panelFormLayout id="pfl2">
+                                  <af:inputText value="#{bindings.Empno.inputValue}"
+                                                label="#{bindings.Empno.hints.label}"
+                                                required="#{bindings.Empno.hints.mandatory}"
+                                                columns="#{bindings.Empno.hints.displayWidth}"
+                                                maximumLength="#{bindings.Empno.hints.precision}"
+                                                shortDesc="#{bindings.Empno.hints.tooltip}"
+                                                id="it1">
+                                    <f:validator binding="#{bindings.Empno.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.Empno.format}"/>
+                                  </af:inputText>
+                                  <af:inputText value="#{bindings.Ename.inputValue}"
+                                                label="#{bindings.Ename.hints.label}"
+                                                required="#{bindings.Ename.hints.mandatory}"
+                                                columns="#{bindings.Ename.hints.displayWidth}"
+                                                maximumLength="#{bindings.Ename.hints.precision}"
+                                                shortDesc="#{bindings.Ename.hints.tooltip}"
+                                                id="it3">
+                                    <f:validator binding="#{bindings.Ename.validator}"/>
+                                  </af:inputText>
+                                  <af:inputText value="#{bindings.Job.inputValue}"
+                                                label="#{bindings.Job.hints.label}"
+                                                required="#{bindings.Job.hints.mandatory}"
+                                                columns="#{bindings.Job.hints.displayWidth}"
+                                                maximumLength="#{bindings.Job.hints.precision}"
+                                                shortDesc="#{bindings.Job.hints.tooltip}"
+                                                id="it2">
+                                    <f:validator binding="#{bindings.Job.validator}"/>
+                                  </af:inputText>
+                                  <af:inputText value="#{bindings.Mgr.inputValue}"
+                                                label="#{bindings.Mgr.hints.label}"
+                                                required="#{bindings.Mgr.hints.mandatory}"
+                                                columns="#{bindings.Mgr.hints.displayWidth}"
+                                                maximumLength="#{bindings.Mgr.hints.precision}"
+                                                shortDesc="#{bindings.Mgr.hints.tooltip}"
+                                                id="it6">
+                                    <f:validator binding="#{bindings.Mgr.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.Mgr.format}"/>
+                                  </af:inputText>
+                                  <af:inputDate value="#{bindings.Hiredate.inputValue}"
+                                                label="#{bindings.Hiredate.hints.label}"
+                                                required="#{bindings.Hiredate.hints.mandatory}"
+                                                shortDesc="#{bindings.Hiredate.hints.tooltip}"
+                                                id="id1">
+                                    <f:validator binding="#{bindings.Hiredate.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.Hiredate.format}"/>
+                                  </af:inputDate>
+                                  <af:inputText value="#{bindings.Sal.inputValue}"
+                                                label="#{bindings.Sal.hints.label}"
+                                                required="#{bindings.Sal.hints.mandatory}"
+                                                columns="#{bindings.Sal.hints.displayWidth}"
+                                                maximumLength="#{bindings.Sal.hints.precision}"
+                                                shortDesc="#{bindings.Sal.hints.tooltip}"
+                                                id="it4">
+                                    <f:validator binding="#{bindings.Sal.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.Sal.format}"/>
+                                  </af:inputText>
+                                  <af:inputText value="#{bindings.Comm.inputValue}"
+                                                label="#{bindings.Comm.hints.label}"
+                                                required="#{bindings.Comm.hints.mandatory}"
+                                                columns="#{bindings.Comm.hints.displayWidth}"
+                                                maximumLength="#{bindings.Comm.hints.precision}"
+                                                shortDesc="#{bindings.Comm.hints.tooltip}"
+                                                id="it5">
+                                    <f:validator binding="#{bindings.Comm.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.Comm.format}"/>
+                                  </af:inputText>
+                                  <af:inputComboboxListOfValues id="deptno1Id"
+                                                                popupTitle="Search and Select: #{bindings.Deptno1.hints.label}"
+                                                                value="#{bindings.Deptno1.inputValue}"
+                                                                label="#{bindings.Deptno1.hints.label}"
+                                                                model="#{bindings.Deptno1.listOfValuesModel}"
+                                                                required="#{bindings.Deptno1.hints.mandatory}"
+                                                                columns="#{bindings.Deptno1.hints.displayWidth}"
+                                                                shortDesc="#{bindings.Deptno1.hints.tooltip}">
+                                    <f:validator binding="#{bindings.Deptno1.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.Deptno1.format}"/>
+                                  </af:inputComboboxListOfValues>
+                                  <f:facet name="footer">
+                                    <af:commandButton text="Submit" id="cb5"/>
+                                  </f:facet>
+                                </af:panelFormLayout>
+                              </af:showDetailItem>
+                              <af:showDetailItem text="Graph"
+                                                 id="sdi4">
+                                <dvt:barGraph id="barGraph1"
+                                              value="#{bindings.EmpView11.graphModel}"
+                                              subType="BAR_VERT_CLUST">
+                                  <dvt:background>
+                                    <dvt:specialEffects/>
+                                  </dvt:background>
+                                  <dvt:graphPlotArea/>
+                                  <dvt:seriesSet>
+                                    <dvt:series/>
+                                  </dvt:seriesSet>
+                                  <dvt:o1Axis/>
+                                  <dvt:y1Axis/>
+                                  <dvt:legendArea automaticPlacement="AP_NEVER"/>
+                                </dvt:barGraph>
+                              </af:showDetailItem>
+                            </af:panelTabbed>
+                          </f:facet>
+                        </af:panelSplitter>
+                      </f:facet>
+                    </af:panelSplitter>
+                  </f:facet>
+                </af:decorativeBox>
+              </f:facet>
+            </af:decorativeBox>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

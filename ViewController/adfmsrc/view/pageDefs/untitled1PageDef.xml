@@ -10,6 +10,9 @@
               ChangeEventPolicy="ppr"/>
     <iterator Binds="EmpView1" RangeSize="-1" DataControl="AppModuleDataControl"
               id="EmpView1Iterator"/>
+    <taskFlow id="Helloflow1" taskFlowId="/WEB-INF/Helloflow.xml#Helloflow"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="DeptView1Iterator" id="Deptno">

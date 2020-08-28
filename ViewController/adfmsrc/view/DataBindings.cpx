@@ -5,14 +5,22 @@
   <definitionFactories>
     <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
              className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
   </definitionFactories>
   <pageMap>
     <page path="/untitled1.jspx" usageId="view_untitled1PageDef"/>
+    <page path="/data.jsff" usageId="view_dataPageDef"/>
+    <page path="/result.jsff" usageId="view_resultPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_untitled1PageDef" path="view.pageDefs.untitled1PageDef"/>
+    <page id="view_dataPageDef" path="view.pageDefs.dataPageDef"/>
+    <page id="view_resultPageDef" path="view.pageDefs.resultPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="Hello" path="model.Hello"/>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
                      SupportsTransactions="true" SupportsFindMode="true"

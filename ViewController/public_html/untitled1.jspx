@@ -66,7 +66,10 @@
                               </f:facet>
                             </af:panelFormLayout>
                           </af:showDetailItem>
-                          <af:showDetailItem text="More Info" id="sdi3"/>
+                          <af:showDetailItem text="More Info" id="sdi3">
+                            <af:region value="#{bindings.Helloflow1.regionModel}"
+                                       id="r1"/>
+                          </af:showDetailItem>
                         </af:panelAccordion>
                       </f:facet>
                       <f:facet name="second">

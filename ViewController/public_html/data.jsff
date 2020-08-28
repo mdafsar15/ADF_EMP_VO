@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+            id="t1"/>
+  <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                     id="tbb1"/>
+  <af:panelFormLayout id="pfl1">
+    <af:inputText value="#{bindings.name.inputValue}"
+                  label="#{bindings.name.hints.label}"
+                  required="#{bindings.name.hints.mandatory}"
+                  columns="#{bindings.name.hints.displayWidth}"
+                  maximumLength="#{bindings.name.hints.precision}"
+                  shortDesc="#{bindings.name.hints.tooltip}" id="it1">
+      <f:validator binding="#{bindings.name.validator}"/>
+    </af:inputText>
+    <af:commandButton actionListener="#{bindings.sayHi.execute}" text="sayHi"
+                      disabled="#{!bindings.sayHi.enabled}" id="cb1"/>
+  </af:panelFormLayout>
+</jsp:root>

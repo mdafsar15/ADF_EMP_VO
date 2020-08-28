@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="Hello" Package="model" BeanClass="model.Hello" isJavaBased="true">
+  <Attribute Name="id" Type="int"/>
+  <Attribute Name="lastName" Type="java.lang.String"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="sayHi"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="name" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="model.Hello"
+                     BeanClass="model.Hello" id="Hello"/>
+</JavaBean>
